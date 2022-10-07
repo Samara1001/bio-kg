@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+      {% for i in data %}
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">{{ i.deal }}</div>
+        <div class="panel-body"><img src="{{ i.img }}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">{{ i.cash_back }}</div>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+  <div class="links">
+    <a href="{% url 'bicycle_page' %}"> go to bicycles</a>
+    <a href="{% url 'handbags_page' %}"> go to handbags</a>
+    <a href="{% url 'jewellery_page' %}"> go to jewellery</a>
+
+  </div>
+</div>
+{% endblock %}
